@@ -35,7 +35,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>React Accordion Demo</h1>
+      <h1>React Accordion Only One Open</h1>
       <div className="accordion">
         {accordionData.map((item, index) => (
           <div id={index} className="accordion-item">
