@@ -32,11 +32,11 @@
     flex-direction: row;
     justify-content: space-between;
     cursor: pointer;
-    background-color: #21aeca;
+    background-color: #08aaca;
   }
   
   .accordion-title:hover {
-    background-color: #3ab4cc;
+    background-color: #047c94;
   }
   
   .accordion-title,
@@ -45,7 +45,7 @@
   }
   
   .accordion-content {
-    background-color: #39b9d2;
+    background-color: #5fc7db;
   }
   
   @media screen and (max-width: 700px) {
