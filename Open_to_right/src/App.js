@@ -1,47 +1,48 @@
-import React, { useEffect } from "react";
+import React from "react";
 //import Accordion from "./Accordion";
 import { accordionData } from "./utils/data";
-import { useState } from "react";
+//import { useState } from "react";
+//import { useEffect } from "react";
 
 const App = () => {
-  const [isActive, setIsActive] = useState([]);
-
+//  const [isActive, setIsActive] = useState(true);
+  const isActive = true;
   //const [allinactive, setAllinactive] = useState(false);
 
-  useEffect(()=>{
-    const defaultStates = [];
-    for(let i=0; i<accordionData.length;i++){
-      defaultStates.push(false);
-    };
+  // useEffect(()=>{
+  //   const defaultStates = [];
+  //   for(let i=0; i<accordionData.length;i++){
+  //     defaultStates.push(false);
+  //   };
     
-    setIsActive(defaultStates);
-  },[]);
+  //   setIsActive(defaultStates);
+  // },[]);
 
 
-  const changetoActive = (index) => {
-    const newStates =[];
-    let currIndex = parseInt(index); 
+  // const changetoActive = (index) => {
+  //   const newStates =[];
+  //   let currIndex = parseInt(index); 
     
-    if(isActive[currIndex]===true){
-      for(let i=0; i<accordionData.length;i++){
-        newStates.push(false);
+  //   if(isActive[currIndex]===true){
+  //     for(let i=0; i<accordionData.length;i++){
+  //       newStates.push(false);
       
-      };
-      setIsActive(newStates);
+  //     };
+  //     setIsActive(newStates);
 
-    }else{
+  //   }else{
     
-    for(let i=0; i<accordionData.length;i++){
-      if(i<=currIndex){
-        newStates.push(true);  
-      }else{
-      newStates.push(false);
-    }
-    };
-    setIsActive(newStates);
-  }
-    //setAllinactive(false);
-  };
+  //   for(let i=0; i<accordionData.length;i++){
+  //     if(i<=currIndex){
+  //       newStates.push(true);  
+  //     }else{
+  //     newStates.push(false);
+  //   }
+  //   };
+  //   setIsActive(newStates);
+  // }
+  //   //setAllinactive(false);
+  // };
 
   return (
     <div>
@@ -49,11 +50,12 @@ const App = () => {
       <div className="accordion">
         {accordionData.map((item, index) => (
           <div id={index} className="accordion-item">
-            <div className="accordion-title" onClick={() => changetoActive(index)}>
+            {/* <div className="accordion-title" onClick={() => changetoActive(index)}> */}
+            <div className="accordion-title">
               <div>{item.title}</div>
-              <div className="plus-minus">{isActive[index] ? "-" : "+"}</div>
+              <div className="plus-minus">{isActive? "-" : "+"}</div>
             </div>
-            {isActive[index] && (
+            {isActive && (
               <div className="accordion-content">{item.content}</div>
             )}
           </div>
